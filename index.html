@@ -42,6 +42,93 @@
     .correct{color:green;font-weight:600}
     .incorrect{color:red;font-weight:600}
   </style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" /
+  <title>Cycling Spelling Course — Dino Words for Parents</title>
+  <style>
+    :root{--accent:#2b6cb0;--accent-2:#f6ad55;--card:#ffffff;--bg:#f3f6fb;--muted:#6b7280}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#f7fbff 0%,var(--bg) 100%);color:#0f172a;position:relative}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px;position:relative;z-index:2}
+    .logo{display:flex;align-items:center;gap:12px}
+    .bike{width:72px;height:72px}
+    h1{margin:0;font-size:1.5rem}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:20px;position:relative}
+    .sidebar{background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);position:relative}
+    
+    /* Vertical track style */
+    .lesson-list {
+      position: relative;
+      padding-left: 28px;
+      border-left: 4px dashed var(--accent-2);
+      margin-top:12px;
+    }
+    .lesson-list h3{margin:0 0 8px}
+    .lesson-link {
+      position: relative;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:10px; margin-bottom:8px;
+      border-radius:8px; text-decoration:none; color:inherit; background:#f8fafc;
+      border:1px solid rgba(15,23,42,0.03);
+    }
+    .lesson-link::before {
+      content:'';
+      display:block;
+      width:12px; height:12px;
+      background:var(--accent); border-radius:50%;
+      position:absolute; left:-20px; top:50%; transform:translateY(-50%);
+      transition:background 0.3s, transform 0.25s;
+    }
+    .lesson-link:hover::before { transform:translateY(-50%) scale(1.15); }
+    .lesson-link.active::before { background: var(--accent-2); transform:translateY(-50%) scale(1.25); }
+
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);opacity:0;transform:translateY(6px);transition:opacity 0.45s ease, transform 0.45s ease}
+    .card.show{opacity:1;transform:none}
+
+    main section{margin-bottom:20px}
+    .lesson-title{display:flex;align-items:center;gap:12px}
+    .controls{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+
+    .training-kit{margin-top:14px}
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    .track-background{
+      background-image: url('https://via.placeholder.com/1200x320?text=Bike+Track+Background');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      border-radius: 12px;
+      margin: 12px 0;
+      padding: 28px;
+      position:relative;
+      min-height:260px;
+      overflow:visible;
+    }
+
+    #bike-marker {
+      position:absolute; top:18px; left:12px; font-size:28px; transition:left 0.45s cubic-bezier(.2,.9,.2,1), transform 0.25s;
+      z-index:3;
+      filter:drop-shadow(0 6px 12px rgba(43,108,176,0.12));
+    }
+    #bike-marker.jump{ transform: translateY(-6px) rotate(-6deg) scale(1.05); }
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:2}.container{padding:12px}}
+    .quiz{margin-top:12px;padding:12px;border:1px solid #ddd;border-radius:10px;background:#f9f9f9}
+    .quiz h4{margin:6px 0}
+    .quiz button{margin-top:6px}
+    .correct{color:green;font-weight:600}
+    .incorrect{color:red;font-weight:600}
+    pre{white-space:pre-wrap;font-family:inherit;color:var(--muted)}
+  </style>
 </head>
 <body>
   <div class="container">
@@ -55,7 +142,7 @@
           <circle cx="36" cy="20" r="2" fill="#f6ad55"/>
         </svg>
         <div>
-          <h1>It's like Cycling on a track</h1>
+          <h1>Dino Words — Cycling Spelling Course</h1>
           <p class="lead">4 short lessons for parents: teach spelling with patience, play, and biblical roots — follow the cycling-track metaphor.</p>
         </div>
       </div>
@@ -63,8 +150,8 @@
 
     <div class="grid">
       <aside class="sidebar">
-        <div class="card">
-          <div class="metaphor">
+        <div class="card show">
+          <div class="metaphor" style="display:flex;gap:12px;align-items:center">
             <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#6fb3e8);display:flex;align-items:center;justify-content:center;color:white;font-weight:600">Ride</div>
             <div>
               <strong>Course Map</strong>
@@ -72,11 +159,11 @@
             </div>
           </div>
 
-          <div style="margin-top:12px" class="lesson-list">
+          <div class="lesson-list">
             <h3>Lessons</h3>
             <div class="lessons">
               <a class="lesson-link" href="#home" data-idx="-1"><span>Home</span><span class="tag">Intro</span></a>
-              <a class="lesson-link" href="#lesson1" data-idx="0"><span>Lesson 1: Why Children Struggle with Spelling</span><span class="tag">Foundations</span></a>
+              <a class="lesson-link" href="#lesson1" data-idx="0"><span>Lesson 1: Why children struggle with spelling</span><span class="tag">Foundations</span></a>
               <a class="lesson-link" href="#lesson2" data-idx="1"><span>Lesson 2: Spelling rules made simple</span><span class="tag">Rules</span></a>
               <a class="lesson-link" href="#lesson3" data-idx="2"><span>Lesson 3: Fun, interest-based activities</span><span class="tag">Activities</span></a>
               <a class="lesson-link" href="#lesson4" data-idx="3"><span>Lesson 4: Modeling patience & perseverance</span><span class="tag">Character</span></a>
@@ -94,6 +181,11 @@
         </div>
       </aside>
 
+      <main>
+        <div class="track-background" aria-hidden="false">
+          <div id="bike-marker" title="bike marker">🚴</div>
+
+          <div class="card show" id="contentCard">
       <main>
         <div class="card" id="contentCard">
           <!-- HOME -->
