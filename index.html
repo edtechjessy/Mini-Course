@@ -1,1 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cycling Spelling Course — Dino Words for Parents</title>
+  <style>
+    :root{--accent:#2b6cb0;--accent-2:#f6ad55;--card:#ffffff;--bg:#f3f6fb;--muted:#6b7280}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#f7fbff 0%,var(--bg) 100%);color:#0f172a}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .bike{width:72px;height:72px}
+    h1{margin:0;font-size:1.5rem}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
+    .sidebar{background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .lesson-list h3{margin:0 0 8px;font-size:1rem}
+    .lessons{display:flex;flex-direction:column;gap:8px}
+    .lesson-link{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:8px;text-decoration:none;color:inherit;background:#f8fafc;border:1px solid rgba(15,23,42,0.03)}
+    .lesson-link.active{background:linear-gradient(90deg,var(--accent)10%,#fff);color:white;border:none;box-shadow:0 8px 24px rgba(43,108,176,0.12)}
+    .tag{font-size:0.8rem;padding:4px 8px;border-radius:999px;background:var(--accent-2);color:#fff}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    .metaphor{display:flex;gap:12px;align-items:center}
+    .metaphor img{width:80px;height:80px;border-radius:12px;object-fit:cover}
+    main section{margin-bottom:20px}
+    .lesson-title{display:flex;align-items:center;gap:12px}
+    .controls{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+
+    .training-kit{margin-top:14px}
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:2}.container{padding:12px}}
+    .quiz{margin-top:12px;padding:12px;border:1px solid #ddd;border-radius:10px;background:#f9f9f9}
+    .quiz h4{margin:6px 0}
+    .quiz button{margin-top:6px}
+    .correct{color:green;font-weight:600}
+    .incorrect{color:red;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg class="bike" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="44" r="10" stroke="#2b6cb0" stroke-width="2" fill="#fff"/>
+          <circle cx="46" cy="44" r="10" stroke="#2b6cb0" stroke-width="2" fill="#fff"/>
+          <path d="M18 44L30 28L40 28" stroke="#2b6cb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 28L36 20" stroke="#2b6cb0" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="36" cy="20" r="2" fill="#f6ad55"/>
+        </svg>
+        <div>
+          <h1>Dino Words — Cycling Spelling Course</h1>
+          <p class="lead">4 short lessons for parents: teach spelling with patience, play, and biblical roots — follow the cycling-track metaphor.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside class="sidebar">
+        <div class="card">
+          <div class="metaphor">
+            <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#6fb3e8);display:flex;align-items:center;justify-content:center;color:white;font-weight:600">Ride</div>
+            <div>
+              <strong>Course Map</strong>
+              <div style="color:var(--muted);font-size:0.9rem">Your training track: start easy, practice rules, build fun, model faith.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="lesson-list">
+            <h3>Lessons</h3>
+            <div class="lessons">
+              <a class="lesson-link" href="#home" data-idx="-1"><span>Home</span><span class="tag">Intro</span></a>
+              <a class="lesson-link" href="#lesson1" data-idx="0"><span>Lesson 1: Why Children Struggle with Spelling</span><span class="tag">Foundations</span></a>
+              <a class="lesson-link" href="#lesson2" data-idx="1"><span>Lesson 2: Spelling rules made simple</span><span class="tag">Rules</span></a>
+              <a class="lesson-link" href="#lesson3" data-idx="2"><span>Lesson 3: Fun, interest-based activities</span><span class="tag">Activities</span></a>
+              <a class="lesson-link" href="#lesson4" data-idx="3"><span>Lesson 4: Modeling patience & perseverance</span><span class="tag">Character</span></a>
+            </div>
+          </div>
+
+          <div class="training-kit">
+            <h4 style="margin:10px 0 6px">Your Training Kit</h4>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Low-tech flashcards</li>
+              <li>Short chants & multisensory tools</li>
+              <li>Parent reflection prompts</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="card" id="contentCard">
+          <!-- HOME -->
+          <section id="home">
+            <div class="lesson-title">
+              <h2>Welcome to the Dino Words Cycling Spelling Course</h2>
+            </div>
+            <p style="color:var(--muted)">This mini-course is designed to help parents teach spelling at home with patience, creativity, and biblical foundations. Explore lessons, watch videos, use printable tools, and reflect on your teaching journey.</p>
+            <img src="https://via.placeholder.com/600x200?text=Welcome+to+the+Course" alt="Course Landing" style="width:100%;border-radius:12px;margin-top:12px">
+          </section>
+
+          <!-- LESSON 1 -->
+          <section id="lesson1" style="display:none">
+            <div class="lesson-title">
+              <h2>Lesson 1 — Why Children Struggle with Spelling</h2>
+              <img src="https://via.placeholder.com/120x120?text=Lesson+1" alt="Lesson 1 Image">
+            </div>
+            <p style="color:var(--muted)">Metaphor: the first stretch of the track — where balance and attention matter. This lesson explains common causes and a biblical foundation that shapes patient teaching.</p>
+
+            <h3>Key readings & short video</h3>
+            <ol>
+              <li>Short reading (2–3 minutes): What makes spelling hard?</li>
+              <li>Video: 3-minute explanation (placeholder)</li>
+            </ol>
+
+            <h3>Biblical Foundations</h3>
+            <p>Teach with patience, service, and dignity. Example scriptures: Matthew 5–7, Psalm 139:14, Philippians 1:6, 1 Peter 4:10.</p>
+
+            <div class="quiz">
+              <h4>Quiz: Lesson 1</h4>
+              <p>Which of the following can make spelling difficult for children?</p>
+              <label><input type="radio" name="q1" value="a"> Phonemic awareness</label><br>
+              <label><input type="radio" name="q1" value="b"> Attention</label><br>
+              <label><input type="radio" name="q1" value="c"> Both A & B</label><br>
+              <button onclick="checkQuiz('q1','c')">Submit</button>
+              <p id="q1-feedback"></p>
+            </div>
+
+            <div class="controls">
+              <button class="btn ghost" data-action="prev">← Prev</button>
+              <button class="btn primary" data-action="next">Next →</button>
+            </div>
+          </section>
+
+          <!-- LESSON 2 -->
+          <section id="lesson2" style="display:none">
+            <div class="lesson-title">
+              <h2>Lesson 2 — Spelling rules made simple</h2>
+              <img src="https://via.placeholder.com/120x120?text=Lesson+2" alt="Lesson 2 Image">
+            </div>
+            <p style="color:var(--muted)">Metaphor: a gentle incline where technique matters. Focus: prefixes, suffixes, roots, and tricky sight words.</p>
+
+            <h3>Quick activities</h3>
+            <ul>
+              <li>Mini-lesson: common prefixes (re-, un-, pre-) — 5 words each</li>
+              <li>Tricky words list: teach by meaning + chunking</li>
+              <li>Printable anchor chart (download)</li>
+            </ul>
+
+            <div class="quiz">
+              <h4>Quiz: Lesson 2</h4>
+              <p>Which prefix means "not" or "opposite of"?</p>
+              <label><input type="radio" name="q2" value="a"> un-</label><br>
+              <label><input type="radio" name="q2" value="b"> re-</label><br>
+              <label><input type="radio" name="q2" value="c"> pre-</label><br>
+              <button onclick="checkQuiz('q2','a')">Submit</button>
+              <p id="q2-feedback"></p>
+            </div>
+
+            <div class="controls">
+              <button class="btn ghost" data-action="prev">← Prev</button>
+              <button class="btn primary" data-action="next">Next →</button>
+            </div>
+          </section>
+
+          <!-- LESSON 3 -->
+          <section id="lesson3" style="display:none">
+            <div class="lesson-title">
+              <h2>Lesson 3 — Creating fun, interest-based spelling activities</h2>
+              <img src="https://via.placeholder.com/120x120?text=Lesson+3" alt="Lesson 3 Image">
+            </div>
+            <p style="color:var(--muted)">Metaphor: the fun, winding curve where flow and joy help build endurance. Use the child's interests to design activities that stick.</p>
+
+            <h3>Activity examples</h3>
+            <ol>
+              <li>Scavenger hunt spelling (in the home)</li>
+              <li>Interest-based spelling journals (dinosaurs, sports)</li>
+              <li>Multisensory: tracing in sand, air-writing with chants</li>
+            </ol>
+
+            <div class="quiz">
+              <h4>Quiz: Lesson 3</h4>
+              <p>What is a good way to make spelling activities more engaging?</p>
+              <label><input type="radio" name="q3" value="a"> Use child's interests</label><br>
+              <label><input type="radio" name="q3" value="b"> Only drill spelling lists</label><br>
+              <button onclick="checkQuiz('q3','a')">Submit</button>
+              <p id="q3-feedback"></p>
+            </div>
+
+            <div class="controls">
+              <button class="btn ghost" data-action="prev">← Prev</button>
+              <button class="btn primary" data-action="next">Next →</button>
+            </div>
+          </section>
+
+          <!-- LESSON 4 -->
+          <section id="lesson4" style="display:none">
+            <div class="lesson-title">
+              <h2>Lesson 4 — Modeling patience, service, and perseverance at home</h2>
+              <img src="https://via.placeholder.com/120x120?text=Lesson+4" alt="Lesson 4 Image">
+            </div>
+            <p style="color:var(--muted)">Metaphor: the summit and the celebration — celebrate milestones, model steady effort, and practice service. Provide reflection prompts and low-stakes assessments.</p>
+
+            <h3>Reflection prompts for parents</h3>
+            <ul>
+              <li>How did I respond when my child struggled today?</li>
+              <li>What small milestone can we celebrate this week?</li>
+              <li>How can faith shape this learning moment?</li>
+            </ul>
+
+            <div class="quiz">
+              <h4>Quiz: Lesson 4</h4>
+              <p>Which value is highlighted in this lesson?</p>
+              <label><input type="radio" name="q4" value="a"> Patience</label><br>
+              <label><input type="radio" name="q4" value="b"> Speed</label><br>
+              <button onclick="checkQuiz('q4','a')">Submit</button>
+              <p id="q4-feedback"></p>
+            </div>
+
+            <div class="controls">
+              <button class="btn ghost" data-action="prev">← Prev</button>
+              <button class="btn primary" data-action="next">Finish</button>
+            </div>
+          </section>
+
+          <div id="endMessage" style="display:none;margin-top:12px;text-align:center;color:var(--accent)">
+            <strong>Great ride — you completed the mini-course!</strong>
+            <p style="color:var(--muted)">Downloadable resources and printable flashcards will appear here.</p>
+          </div>
+
+        </div>
+
+        <footer>
+          <div>Created for <strong>Dino Words for Parents</strong> — microlearning in 4 short lessons.</div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const links = Array.from(document.querySelectorAll('.lesson-link'));
+    const sections = [
+      document.getElementById('lesson1'),
+      document.getElementById('lesson2'),
+      document.getElementById('lesson3'),
+      document.getElementById('lesson4')
+    ];
+    const homeSection = document.getElementById('home');
+    const endMessage = document.getElementById('endMessage');
+
+    function showLesson(idx){
+      if(idx === -1){ // home
+        homeSection.style.display = 'block';
+        sections.forEach(s=>s.style.display='none');
+        endMessage.style.display='none';
+      } else {
+        homeSection.style.display = 'none';
+        sections.forEach((s,i)=>{s.style.display = i===idx? 'block':'none'});
+        endMessage.style.display = 'none';
+      }
+      links.forEach((a,i)=>a.classList.toggle('active', i===idx+1));
+      window.location.hash = idx===-1 ? '#home' : '#lesson' + (idx+1);
+    }
+
+    links.forEach((a,i)=> a.addEventListener('click', (e)=>{e.preventDefault(); showLesson(i-1)}));
+
+    document.querySelectorAll('[data-action]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const visibleIndex = sections.findIndex(s=> s.style.display!=='none');
+        if(btn.dataset.action === 'next'){
+          const next = visibleIndex+1;
+          if(next < sections.length) showLesson(next); else {sections.forEach(s=>s.style.display='none'); endMessage.style.display='block';}
+        } else {
+          const prev = Math.max(0, visibleIndex-1); showLesson(prev);
+        }
+      });
+    });
+
+    const initial = location.hash ? location.hash.includes('home') ? -1 : Number(location.hash.replace('#lesson','')) -1 : -1; 
+    showLesson(initial);
+
+    // Quiz check function
+    function checkQuiz(qname, correct){
+      const radios = document.getElementsByName(qname);
+      let selected = null;
+      for(const r of radios){ if(r.checked) selected = r.value; }
+      const feedback = document.getElementById(qname+'-feedback');
+      if(selected === null){ feedback.textContent = 'Please select an answer.'; feedback.className=''; return;}
+      feedback.textContent = selected === correct ? 'Correct!' : 'Incorrect.';
+      feedback.className = selected === correct ? 'correct' : 'incorrect';
+    }
+  </script>
+</body>
+</html>
 
