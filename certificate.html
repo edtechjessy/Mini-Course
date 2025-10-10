@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
+
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .certificate {
+            width: 800px;
+            height: 1000px;
+            border: 5px solid #333;
+            padding: 40px;
+            margin: 20px auto;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            letter-spacing: 5px;
+        }
+
+        .proficiency {
+            font-size: 28px;
+            margin-top: 30px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .recipient-name {
+            font-size: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .certificate-number {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .award-date {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .details {
+            font-size: 20px;
+            margin-top: 30px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .footer {
+            font-size: 16px;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        .stamp {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 48px;
+            color: #1a7f36;
+            transform: rotate(-20deg);
+        }
+
+        .qr-code {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: block;
+            max-width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <title>Certificate</title>
+</head>
+<body>
+    <div class="certificate">
+        <div class="stamp">✔</div>
+        <div class="title">Certificate of Completion</div>
+
+        <!-- Recipient Name dynamically inserted -->
+        <div class="recipient-name" id="recipient-name">[Recipient's Name]</div>
+
+        <div class="proficiency">Successfully Completed "Grace with Spelling"</div>
+
+        <div class="certificate-number">
+            Certificate No: <span id="cert-number">123456789012345</span>
+        </div>
+
+        <div class="award-date">
+            Awarded on: <span id="award-date"></span>
+        </div>
+
+        <div class="details">
+            This certificate validates that the recipient has completed the mini-course "Grace with Spelling", demonstrating understanding and application of: <br>
+            - Teaching spelling with patience and encouragement <br>
+            - Designing interest-based, engaging spelling activities <br>
+            - Applying biblical principles of grace and perseverance in learning <br>
+            - Supporting children through mistakes and growth <br>
+        </div>
+
+        <!-- QR Code for Verification -->
+        <div class="qr-code" id="qrcode"></div>
+
+        <div class="footer">
+            &copy; edtechjessy
+        </div>
+    </div>
+
+    <script>
+        // Function to generate a random 15-digit number for the certificate
+        function generateCertificateNumber() {
+            let certNumber = '';
+            for (let i = 0; i < 15; i++) {
+                certNumber += Math.floor(Math.random() * 10);
+            }
+            document.getElementById('cert-number').textContent = certNumber;
+        }
+
+        // Function to generate current date and time
+        function generateAwardDate() {
+            const date = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const awardDate = date.toLocaleString('en-US', options);
+            document.getElementById('award-date').textContent = awardDate;
+        }
+
+        // Function to set recipient name dynamically from localStorage
+        function setRecipientName() {
+            const name = localStorage.getItem('name');
+            if (name) {
+                document.getElementById('recipient-name').textContent = name;
+            } else {
+                document.getElementById('recipient-name').textContent = "Unknown Recipient";
+            }
+        }
+
+        // Generate QR code with the provided URL for certificate verification
+        const qrData = "https://qr-code.click/i/p/677adfcdd1b14"; // Example QR URL
+        QRCode.toCanvas(document.getElementById('qrcode'), qrData, function (error) {
+            if (error) console.error(error);
+            console.log('QR Code generated!');
+        });
+
+        // Call the functions on page load
+        window.onload = function() {
+            generateCertificateNumber();
+            generateAwardDate();
+            setRecipientName();
+        };
+    </script>
+</body>
+</html>
