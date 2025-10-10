@@ -1,4 +1,16 @@
 
+
+<!-- File Upload Section -->
+<h2>Upload Your Files</h2>
+
+<label for="audioUpload">Upload Audio</label>
+<input type="file" id="audioUpload" accept="audio/*">
+<audio id="audioPreview" controls></audio>
+
+<label for="pdfUpload">Upload PDF</label>
+<input type="file" id="pdfUpload" accept="application/pdf">
+<iframe id="pdfPreview" width="600" height="400"></iframe>
+
 <script>
   // Audio preview
   const audioInput = document.getElementById('audioUpload');
@@ -23,4 +35,10 @@
       pdfPreview.src = pdfURL;
     }
   });
+</script>
+
+<!-- Discussion Section -->
+<h2>Discussion</h2>
+<p>Discussion questions go here...</p>
+
 </script>
