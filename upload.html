@@ -1,0 +1,26 @@
+
+<script>
+  // Audio preview
+  const audioInput = document.getElementById('audioUpload');
+  const audioPreview = document.getElementById('audioPreview');
+
+  audioInput.addEventListener('change', () => {
+    const file = audioInput.files[0];
+    if (file) {
+      const audioURL = URL.createObjectURL(file);
+      audioPreview.src = audioURL;
+    }
+  });
+
+  // PDF preview
+  const pdfInput = document.getElementById('pdfUpload');
+  const pdfPreview = document.getElementById('pdfPreview');
+
+  pdfInput.addEventListener('change', () => {
+    const file = pdfInput.files[0];
+    if (file) {
+      const pdfURL = URL.createObjectURL(file);
+      pdfPreview.src = pdfURL;
+    }
+  });
+</script>
