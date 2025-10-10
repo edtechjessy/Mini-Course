@@ -207,47 +207,7 @@
               <img src="https://via.placeholder.com/120x120?text=Lesson+1" alt="Lesson 1 Image">
             </div>
             <p style="color:var(--muted)">Metaphor: the first stretch of the track — where balance and attention matter. This lesson explains common causes and a biblical foundation that shapes patient teaching.</p>
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0 20px;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  h1, h2, h3 {
-    color: #2b6cb0;
-  }
-  a {
-    color: #2b6cb0;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .video-container {
-    margin: 20px 0;
-  }
-  .image-container {
-    margin: 20px 0;
-    text-align: center;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  .activity, .reflection {
-    background-color: #e6f2ff;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 8px;
-  }
-  ul {
-    margin-left: 20px;
-  }
-</style>
-</head>
+
 <body>
 
 <h1>Lesson 1: Why Children Struggle with Spelling</h1>
@@ -310,6 +270,85 @@ function revealText(btn, text){
   <li><strong>Patience:</strong> Allow them time to process and try without pressure.</li>
   <li><strong>Encouragement:</strong> Celebrate effort, not just accuracy.</li>
   <li><strong>Affirmation:</strong> Highlight what they did well, even in small steps.</li>
+
+  <div style="max-width:800px; margin:30px auto; font-family:Arial,sans-serif;">
+  <h3 style="color:#2b6cb0; text-align:center; margin-bottom:20px;">Match Biblical Principles to Actions</h3>
+  <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div id="principles" style="flex:1; min-width:180px;">
+      <div draggable="true" ondragstart="drag(event)" id="patience" class="drag-item">Patience</div>
+      <div draggable="true" ondragstart="drag(event)" id="encouragement" class="drag-item">Encouragement</div>
+      <div draggable="true" ondragstart="drag(event)" id="affirmation" class="drag-item">Affirmation</div>
+    </div>
+    <div id="actions" style="flex:2; min-width:250px; display:flex; flex-direction:column; gap:15px;">
+      <div ondrop="dropLesson1(event)" ondragover="allowDrop(event)" data-answer="patience" class="drop-box">
+        Allow your child time to process and try without pressure
+      </div>
+      <div ondrop="dropLesson1(event)" ondragover="allowDrop(event)" data-answer="encouragement" class="drop-box">
+        Celebrate effort, not just accuracy
+      </div>
+      <div ondrop="dropLesson1(event)" ondragover="allowDrop(event)" data-answer="affirmation" class="drop-box">
+        Highlight what they did well, even in small steps
+      </div>
+    </div>
+  </div>
+  <p id="feedback" style="text-align:center; font-size:18px; margin-top:20px; min-height:30px;"></p>
+</div>
+
+<style>
+.drag-item {
+  padding:10px; 
+  margin-bottom:10px; 
+  border:2px solid #2b6cb0; 
+  border-radius:8px; 
+  background:#fff; 
+  text-align:center; 
+  cursor:grab;
+  font-weight:bold;
+}
+.drag-item:active {
+  cursor:grabbing;
+}
+.drop-box {
+  padding:15px; 
+  border:2px dashed #2b6cb0; 
+  border-radius:8px; 
+  background:#f7f9fc;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  transition:0.3s all;
+}
+.correct {
+  background:#c6f6d5 !important;
+  border:2px solid #38a169 !important;
+  transform: scale(1.05);
+  animation: pop 0.3s ease;
+}
+@keyframes pop {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.05); }
+}
+</style>
+
+<script>
+function allowDrop(ev){ ev.preventDefault(); }
+function drag(ev){ ev.dataTransfer.setData("text", ev.target.id); }
+
+function dropLesson1(ev){
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const feedback = document.getElementById('feedback');
+
+  if(ev.target.getAttribute("data-answer") === data){
+    ev.target.classList.add('correct');
+    ev.target.appendChild(document.getElementById(data));
+    feedback.innerHTML = "✅ Correct! Great job! 😊";
+  } else{
+    feedback.innerHTML = "❌ Try again! You can do it!";
+  }
+}
+</script>
 </ul>
 <p>Example: When your child struggles with “through,” you might say:</p>
 <blockquote>
