@@ -83,6 +83,41 @@
     <a class="lesson-link" href="#lesson4" data-idx="3"><span>Lesson 4: Modeling patience & perseverance</span></a>
   </div>
 </div>
+<!-- Floating Upload Button -->
+<a href="upload.html" target="_blank" id="floatingUploadButton">Submit Assignments</a>
+
+<style>
+  #floatingUploadButton {
+    position: fixed;
+    bottom: 30px; /* distance from bottom */
+    right: 30px;  /* distance from right */
+    background-color: #f6ad55;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  #floatingUploadButton:hover {
+    background-color: #ed8936;
+    transform: scale(1.05);
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    #floatingUploadButton {
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
 
 
           </div>
