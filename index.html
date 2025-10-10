@@ -207,15 +207,6 @@
               <img src="https://via.placeholder.com/120x120?text=Lesson+1" alt="Lesson 1 Image">
             </div>
             <p style="color:var(--muted)">Metaphor: the first stretch of the track — where balance and attention matter. This lesson explains common causes and a biblical foundation that shapes patient teaching.</p>
-
-            <h3>Key readings & short video</h3>
-           <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 1: Why Children Struggle with Spelling</title>
-<style>
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -278,6 +269,37 @@
 <h3>3. Learning Differences (e.g., Dyslexia)</h3>
 <p>Some children process written language differently. Dyslexia or other learning differences can make it harder to remember spellings or apply rules consistently. Understanding your child’s unique learning profile helps you adapt your support effectively.</p>
 <p><a href="https://dyslexiaida.org/spelling/" target="_blank">Dyslexia guidance from the International Dyslexia Association</a></p>
+
+<div id="lesson1-challenges" style="max-width:700px; margin:20px auto; text-align:center;">
+  <h3 style="color:#2b6cb0; margin-bottom:20px;">Why do children sometimes struggle with spelling?</h3>
+  <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:15px;">
+    <button onclick="revealText(this,'Some children have difficulty connecting sounds to letters (Phonological & Phonemic Awareness). Activities like listening to sounds and breaking words into parts help.')" 
+            style="padding:15px 20px; border:none; border-radius:8px; background:#f6ad55; color:white; font-weight:bold; cursor:pointer; transition:0.3s;">
+      Challenge 1
+    </button>
+    <button onclick="revealText(this,'English spelling can be irregular. Words like “through” and “though” follow different rules, confusing children. Encourage practice and patience to help them navigate these inconsistencies.')" 
+            style="padding:15px 20px; border:none; border-radius:8px; background:#f6ad55; color:white; font-weight:bold; cursor:pointer; transition:0.3s;">
+      Challenge 2
+    </button>
+    <button onclick="revealText(this,'Learning differences (e.g., Dyslexia) make it harder for some children to remember spellings. Understanding each child’s unique learning profile allows you to support them effectively.')" 
+            style="padding:15px 20px; border:none; border-radius:8px; background:#f6ad55; color:white; font-weight:bold; cursor:pointer; transition:0.3s;">
+      Challenge 3
+    </button>
+  </div>
+  <p id="challenge-output" style="margin-top:20px; font-size:16px; color:#333; min-height:40px;"></p>
+</div>
+
+<script>
+function revealText(btn, text){
+  document.getElementById('challenge-output').textContent = text;
+  // Reset button colors
+  const buttons = btn.parentNode.querySelectorAll('button');
+  buttons.forEach(b => b.style.background = '#f6ad55');
+  // Highlight clicked button
+  btn.style.background = '#ed8936';
+}
+</script>
+
 
 <h2>Emotional Factors</h2>
 <p>Children’s confidence and emotional state can greatly affect spelling performance. Frustration or repeated mistakes may lower self-confidence. Positive reinforcement and calm guidance help children feel safe to try and learn.</p>
