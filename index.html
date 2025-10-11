@@ -848,6 +848,242 @@ function checkAssessment() {
               <img src="https://via.placeholder.com/120x120?text=Lesson+4" alt="Lesson 4 Image">
             </div>
             <p style="color:var(--muted)">Metaphor: the summit and the celebration — celebrate milestones, model steady effort, and practice service. Provide reflection prompts and low-stakes assessments.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4: Modeling Patience, Service, and Perseverance at Home</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  h1, h2, h3 {
+    color: #2b6cb0;
+  }
+  a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  .video-container, .interactive, .activity, .reflection {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .interactive, .activity, .reflection {
+    background-color: #e6f2ff;
+  }
+  ul { margin-left: 20px; }
+  img { max-width: 100%; border-radius: 8px; }
+  select, input[type="text"], button, textarea {
+    padding: 5px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .game-button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .game-button:hover { background-color: #1e4f7a; }
+  .flashcard {
+    display: inline-block;
+    margin: 5px;
+    padding: 20px;
+    border: 2px solid #2b6cb0;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  .flashcard.correct { background-color: #9ae69a; transform: scale(1.2); }
+  .flashcard.incorrect { background-color: #f08a8a; transform: scale(1.1) rotate(-5deg); }
+  #dropBox {
+    min-height: 60px;
+    padding: 20px;
+    border: 4px dashed #FF4500;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #FFF5EE;
+  }
+</style>
+</head>
+<body>
+
+<h1>Lesson 4: Modeling Patience, Service, and Perseverance at Home</h1>
+
+<h2>Welcome</h2>
+<p>Welcome to Lesson 4! In this lesson, you will explore how modeling patience, service, and perseverance supports your child’s spelling development and strengthens their character. As a parent, your actions serve as a living example, showing your child how to face challenges with calm and determination.</p>
+
+<h2>Reading: Understanding the Impact of Your Example</h2>
+
+<p>Modeling patience, service, and perseverance at home is one of the most powerful ways parents can shape their child’s learning and character. When you approach spelling practice with calm and encouragement, your child sees firsthand how to respond to challenges without frustration or fear. Scripture reminds us that our actions influence others: Philippians 1:6 assures us that God, who began a good work in our children, will continue it. By demonstrating patience, you create a safe space for your child to make mistakes and learn from them, reinforcing their confidence and perseverance in the learning process.</p>
+
+<p>Service and encouragement go hand-in-hand with patience. By putting your child’s needs first during learning moments, you exemplify Christlike behavior and nurture a love for growth. Small habits, like celebrating small wins or offering gentle guidance when a child struggles with a tricky word, model perseverance and dedication. Even when you feel frustrated, taking a moment to reflect, pray, or use a prepared script shows your child the importance of self-control and consistency. Over time, these examples help your child internalize positive learning habits and understand that success comes through effort, persistence, and a supportive environment.</p>
+
+<h2>Video Demonstrations</h2>
+<div class="video-container">
+  <h3>Patience & Service Example</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/PHpPtdk9rco" 
+  title="Patience and Service Video" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="video-container">
+  <h3>Study Less, Study Smart</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/IlU-zDU6aQ0" 
+  title="Study Less, Study Smart Video" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h2>Interactive Game 1: Spot the Trigger</h2>
+<p>Click all the situations that might trigger stress during spelling practice:</p>
+<button class="game-button" onclick="checkTrigger(this)">Child refuses to try</button>
+<button class="game-button" onclick="checkTrigger(this)">Parent feels rushed</button>
+<button class="game-button" onclick="checkTrigger(this)">Child successfully spells words</button>
+<button class="game-button" onclick="checkTrigger(this)">Quiet background music playing</button>
+<p id="triggerResult" style="font-weight:bold;"></p>
+
+<h2>Learning Activities</h2>
+<div class="activity">
+  <h3>Activity 1 — Role-Play Practice (15–20 min)</h3>
+  <p>Practice one calm-scripted interaction from the script bank. Take turns playing parent and child roles to build patience and consistency.</p>
+  <p>Script Bank: <a href="https://66354807463c43536c57-4680b7aeabbe1da89e76c74f0f782234.ssl.cf1.rackcdn.com/3265/641cf4c38b615.PEACEMAKER%20PARENTING%20SAMPLE%20SCRIPTS.pdf?utm_source=chatgpt.com" target="_blank">View Scripts</a></p>
+</div>
+
+<div class="activity">
+  <h3>Activity 2 — Growth Commitment (5–10 min)</h3>
+  <p>Write down one habit to practice patience and perseverance over the next four weeks. Reflect on how this will help your child and yourself.</p>
+  <textarea id="habitPlan" placeholder="Describe your commitment here..."></textarea>
+  <button onclick="submitHabit()">Submit Commitment</button>
+  <p id="habitResult" style="font-weight:bold;"></p>
+</div>
+
+<h2>Interactive Game 2: Script Match</h2>
+<p>Click each card to reveal if it is a calm parent response or not. Correct responses glow green; incorrect glow red and wiggle.</p>
+<div id="flashcards">
+  <div class="flashcard" onclick="flipCard(this, 'correct')">Child complains: “I can’t spell this!”</div>
+  <div class="flashcard" onclick="flipCard(this, 'incorrect')">Parent: “Do it now!”</div>
+  <div class="flashcard" onclick="flipCard(this, 'correct')">Parent: “Let’s try together slowly.”</div>
+  <div class="flashcard" onclick="flipCard(this, 'incorrect')">Parent: “Stop whining!”</div>
+</div>
+
+<h2>Interactive Assessment: Drag-and-Drop Quiz</h2>
+<p>Drag the correct answer to the box. Watch it come alive with colors and celebration when correct!</p>
+
+<ul id="quizOptions" style="display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0;">
+  <li draggable="true" ondragstart="dragStart(event)" id="A" class="quiz-item" style="background:#FFD700; padding:15px; border-radius:10px; cursor:pointer;">A) Improves child’s confidence</li>
+  <li draggable="true" ondragstart="dragStart(event)" id="B" class="quiz-item" style="background:#FF69B4; padding:15px; border-radius:10px; cursor:pointer;">B) Reduces parent stress</li>
+  <li draggable="true" ondragstart="dragStart(event)" id="C" class="quiz-item" style="background:#1E90FF; padding:15px; border-radius:10px; cursor:pointer;">C) Eliminates spelling mistakes</li>
+  <li draggable="true" ondragstart="dragStart(event)" id="D" class="quiz-item" style="background:#32CD32; padding:15px; border-radius:10px; cursor:pointer;">D) None of the above</li>
+</ul>
+
+<div id="dropBox" ondrop="drop(event)" ondragover="allowDrop(event)">Drop the correct answer here</div>
+<p id="quizResult" style="font-size:1.2em; font-weight:bold; text-align:center; margin-top:10px;"></p>
+
+<h2>Reflection</h2>
+<div class="reflection">
+  <ul>
+    <li>Which situations trigger stress during spelling practice?</li>
+    <li>How can you demonstrate patience and encouragement consistently?</li>
+    <li>How does modeling biblical virtues influence your child’s learning?</li>
+  </ul>
+</div>
+
+<h2>Extended Resources</h2>
+<ul>
+  <li><a href="https://youtu.be/MzyGzMSTspg?feature=shared" target="_blank">How to Keep Your Calm</a></li>
+  <li><a href="https://66354807463c43536c57-4680b7aeabbe1da89e76c74f0f782234.ssl.cf1.rackcdn.com/3265/641cf4c38b615.PEACEMAKER%20PARENTING%20SAMPLE%20SCRIPTS.pdf?utm_source=chatgpt.com" target="_blank">Parent Script Bank</a></li>
+</ul>
+
+<script>
+function checkTrigger(button) {
+  const correct = ["Child refuses to try", "Parent feels rushed"];
+  if(correct.includes(button.innerText)) {
+    document.getElementById("triggerResult").innerText = "✅ Correct! These are potential stress triggers to watch for.";
+    button.style.backgroundColor = "#9ae69a";
+  } else {
+    document.getElementById("triggerResult").innerText = "❌ This is less likely to cause stress.";
+    button.style.backgroundColor = "#f08a8a";
+  }
+}
+
+function submitHabit() {
+  const plan = document.getElementById("habitPlan").value.trim();
+  if(plan.length > 0) {
+    document.getElementById("habitResult").innerText = "🌟 Your commitment is noted! Reflect weekly and celebrate progress!";
+  } else {
+    document.getElementById("habitResult").innerText = "Please write a habit commitment before submitting.";
+  }
+}
+
+function flipCard(card, type) {
+  if(type === 'correct') {
+    card.classList.add('correct');
+    card.innerText += " ✅ Correct!";
+  } else {
+    card.classList.add('incorrect');
+    card.innerText += " ❌ Try Again!";
+  }
+  card.onclick = null;
+}
+
+let dragged;
+function allowDrop(ev) { ev.preventDefault(); }
+function dragStart(ev) { dragged = ev.target; }
+function drop(ev) {
+  ev.preventDefault();
+  const dropBox = ev.target;
+  dropBox.innerHTML = "";
+  dropBox.appendChild(dragged);
+
+  if(dragged.id === "A") {
+    dropBox.style.background = "#FFD700";
+    dropBox.classList.add('flash');
+    document.getElementById("quizResult").innerHTML = "🎉 Correct! Perseverance boosts your child’s confidence!";
+    launchConfetti();
+  } else {
+    dropBox.style.background = "#FF6347";
+    dropBox.classList.add('shake');
+    document.getElementById("quizResult").innerHTML = "❌ Not quite! Try again!";
+  }
+
+  dragged.setAttribute('draggable','false');
+}
+
+function launchConfetti() {
+  for(let i=0;i<50;i++){
+    const piece = document.createElement('div');
+    piece.style.width = "10px";
+    piece.style.height = "10px";
+    piece.style.position = "absolute";
+    piece.style.top = "0";
+    piece.style.left = Math.random() * window.innerWidth + "px";
+    piece.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    piece.style.borderRadius = "50%";
+    document.body.appendChild(piece);
+    piece.animate([
+      { transform: `translateY(0px)`, opacity: 1 },
+      { transform: `translateY(${window.innerHeight}px) rotate(${Math.random()*720}deg)`, opacity: 0 }
+    ], { duration: 1200, easing: 'ease-out' });
+    setTimeout(()=> piece.remove(), 1300);
+  }
+}
+</script>
+
+</body>
+</html>
 
             <h3>Reflection prompts for parents</h3>
             <ul>
