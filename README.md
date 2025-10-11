@@ -4,7 +4,7 @@ The following Religious Mini-Course was created for **Ms. Peggy**.
 
 ---
 
-## 🌿 Minimalist HTML LMS Template
+## 🌿 Copy this Minimalist HTML LMS Template
 
 A fully in-house, self-contained **Learning Management System (LMS)** template designed for a mini-course or microlearning projects.  
 This system is built for simplicity — **no complex setup required.**  
