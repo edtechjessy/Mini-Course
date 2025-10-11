@@ -1,46 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Upload Your Files</title>
+</head>
+<body style="font-family:Arial,sans-serif; background:#eef2f7; display:flex; justify-content:center; padding:40px;">
+
 <!-- Modern File Upload Section -->
-<section style="margin-top:40px; padding:20px; border-radius:12px; background:#f7f9fc; box-shadow:0 4px 8px rgba(0,0,0,0.1); max-width:700px;">
-  <h2 style="font-family: 'Arial', sans-serif; color:#2b6cb0; margin-bottom:15px;">Upload Your Files</h2>
+<section style="padding:20px; border-radius:12px; background:#f7f9fc; box-shadow:0 4px 8px rgba(0,0,0,0.1); max-width:700px; width:100%;">
+  <h2 style="color:#2b6cb0; margin-bottom:15px;">Upload Your Files</h2>
   <p style="color:#333; margin-bottom:20px;">Share your audio reflections or PDF journals here:</p>
 
-  <!-- Audio Upload Card -->
-  <div style="margin-bottom:20px; padding:15px; background:white; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-    <label for="audioUpload" style="display:inline-block; background:#2b6cb0; color:white; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;">Upload Audio</label>
-    <input type="file" id="audioUpload" accept="audio/*" style="display:none;">
-    <audio id="audioPreview" controls style="width:100%; margin-top:10px; border-radius:6px;"></audio>
-  </div>
+  <form id="uploadForm" action="https://formspree.io/f/xldppoyz" method="POST">
+    <!-- Audio Upload Card -->
+    <div style="margin-bottom:20px; padding:15px; background:white; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+      <label for="audioUpload" style="display:inline-block; background:#2b6cb0; color:white; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;">Upload Audio</label>
+      <input type="file" id="audioUpload" accept="audio/*" style="display:none;">
+      <audio id="audioPreview" controls style="width:100%; margin-top:10px; border-radius:6px;"></audio>
+      <input type="hidden" name="audio_link" id="audioLink">
+    </div>
 
-  <!-- PDF Upload Card -->
-  <div style="margin-bottom:10px; padding:15px; background:white; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-    <label for="pdfUpload" style="display:inline-block; background:#f6ad55; color:white; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;">Upload PDF</label>
-    <input type="file" id="pdfUpload" accept="application/pdf" style="display:none;">
-    <iframe id="pdfPreview" style="width:100%; height:400px; margin-top:10px; border-radius:6px; border:1px solid #ddd;"></iframe>
-  </div>
+    <!-- PDF Upload Card -->
+    <div style="margin-bottom:20px; padding:15px; background:white; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+      <label for="pdfUpload" style="display:inline-block; background:#f6ad55; color:white; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold;">Upload PDF</label>
+      <input type="file" id="pdfUpload" accept="application/pdf" style="display:none;">
+      <iframe id="pdfPreview" style="width:100%; height:300px; margin-top:10px; border-radius:6px; border:1px solid #ddd;"></iframe>
+      <input type="hidden" name="pdf_link" id="pdfLink">
+    </div>
+
+    <!-- Optional Note -->
+    <textarea name="message" placeholder="Add a note or comment..." style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; margin-bottom:15px; font-size:14px;"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" style="background:#2b6cb0; color:white; border:none; padding:12px 25px; border-radius:6px; cursor:pointer; font-size:16px; font-weight:bold;">
+      Submit
+    </button>
+  </form>
+
+  <p id="formMsg" style="margin-top:15px; font-weight:bold; color:#2b6cb0;"></p>
 </section>
 
 <script>
-  // Audio preview
   const audioInput = document.getElementById('audioUpload');
   const audioPreview = document.getElementById('audioPreview');
+  const audioLink = document.getElementById('audioLink');
 
   audioInput.addEventListener('change', () => {
     const file = audioInput.files[0];
     if (file) {
       const audioURL = URL.createObjectURL(file);
       audioPreview.src = audioURL;
+      audioLink.value = `Local file: ${file.name}`;
     }
   });
 
-  // PDF preview
   const pdfInput = document.getElementById('pdfUpload');
   const pdfPreview = document.getElementById('pdfPreview');
+  const pdfLink = document.getElementById('pdfLink');
 
   pdfInput.addEventListener('change', () => {
     const file = pdfInput.files[0];
     if (file) {
       const pdfURL = URL.createObjectURL(file);
       pdfPreview.src = pdfURL;
+      pdfLink.value = `Local file: ${file.name}`;
+    }
+  });
+
+  // Handle form submission with success message
+  const form = document.getElementById('uploadForm');
+  const msg = document.getElementById('formMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      msg.textContent = "✅ Your submission was sent successfully!";
+      form.reset();
+      audioPreview.src = '';
+      pdfPreview.src = '';
+    } else {
+      msg.textContent = "⚠️ There was an error sending your form.";
     }
   });
 </script>
 
+</body>
+</html>
