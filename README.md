@@ -79,7 +79,15 @@ https://elfsight.com/comments-widget/?utm_source=websites&utm_medium=clients&utm
 ### 6. Floating “Submit Assignment” Button
 📎 Floating Submit Assignment Button
 Always visible on screen for easy access.
-Clicking it opens a preview and upload form (supports images or PDFs).
+Clicking it opens a preview and upload form (supports images or PDFs).Replace Formspree Code to recieve in your own email inbox.
+
+#1. Create a form on Formspree
+Create a free account and choose New Form.
+
+#2. Update your form's action
+Replace with the form endpoint in your Formspree account.
+
+<form action="https://formspree.io/f/{form_id}" method="post">
 
 
 
