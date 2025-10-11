@@ -23,7 +23,8 @@ Each lesson includes:
 - Seamless navigation between lessons
 
 ### 💬 Discussion Plug-in
-HTML5 discussion area integrated at the bottom of each lesson for learner comments or journaling.
+HTML5 using Elfsight discussion area integrated at the bottom of each lesson for learner comments or journaling.
+https://elfsight.com/comments-widget/?utm_source=websites&utm_medium=clients&utm_content=comments&utm_term=edtechjessy.github.io&utm_campaign=free-widget
 
 ### 📎 Floating Submit Assignment Button
 Always visible on screen for easy access.  
