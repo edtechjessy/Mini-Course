@@ -657,12 +657,174 @@ intable anchor chart (download)</li>
             </div>
             <p style="color:var(--muted)">Metaphor: the fun, winding curve where flow and joy help build endurance. Use the child's interests to design activities that stick.</p>
 
-            <h3>Activity examples</h3>
-            <ol>
-              <li>Scavenger hunt spelling (in the home)</li>
-              <li>Interest-based spelling journals (dinosaurs, sports)</li>
-              <li>Multisensory: tracing in sand, air-writing with chants</li>
-            </ol>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  h1, h2, h3 {
+    color: #2b6cb0;
+  }
+  a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .video-container, .interactive, .activity, .reflection {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .interactive, .activity, .reflection {
+    background-color: #e6f2ff;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  ul {
+    margin-left: 20px;
+  }
+  select, input[type="text"], button, textarea {
+    padding: 5px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+
+<h1>Lesson 3: Creating Fun, Interest-Based Spelling Activities</h1>
+
+<h2>Welcome</h2>
+<p>Welcome to Lesson 3! In this lesson, you will learn how to make spelling practice engaging by tailoring activities to your child’s top interests. When children are motivated by themes they love, their retention and enjoyment increase.</p>
+<p>We’ll provide low-tech and tech-based options for customizing games, along with templates and examples that are easy to adapt at home.</p>
+
+<h2>Why Interest-Based Games Work</h2>
+<p>Interest-based activities increase engagement because children see relevance and fun in their learning. Whether it’s crafting, scavenger hunts, or digital games, connecting spelling to something your child enjoys can make practice feel effortless.</p>
+<p><a href="https://www.cambridgeenglish.org/learning-english/parents-and-children/your-childs-interests/kids-are-here-to-play-the-importance-of-games/" target="_blank">Read more about the importance of games</a></p>
+
+<div class="video-container">
+  <h3>Low-Tech Spelling Game Example</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/k2EuDpt2p6c" 
+  title="Low-Tech Spelling Game Video" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h3>Creating Games</h3>
+<p>Here are some platforms to help you design spelling games:</p>
+<ul>
+  <li><a href="https://www.educaplay.com/" target="_blank">Educaplay – Game Maker</a></li>
+  <li><a href="https://genially.com/templates/games/education/" target="_blank">Genially – Game Templates</a></li>
+  <li><a href="https://www.educandy.com/" target="_blank">Educandy – Tech Games (No Coding)</a></li>
+</ul>
+
+<div class="interactive">
+  <h3>Interactive 1: Brainstorm Interests</h3>
+  <p>List 3 ways your child’s favorite interest could become a spelling activity. For example, if your child loves animals, you could create an animal-themed bingo game.</p>
+  <textarea id="interestInput" placeholder="Write your 3 ideas here..."></textarea>
+  <button onclick="submitInterest()">Submit</button>
+  <p id="interestResult"></p>
+</div>
+
+<h2>Designing a Game</h2>
+<p>Use your brainstormed ideas to design a low-tech or tech spelling game for your child. Consider bingo, scavenger hunts, crafts, or digital quiz games. Make it fun, interactive, and short so your child stays engaged.</p>
+
+<div class="video-container">
+  <h3>Educandy Game Tutorial</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/nz92qbxafSY" 
+  title="Educandy Tutorial Video" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="interactive">
+  <h3>Interactive 2: Plan Your Game</h3>
+  <p>Enter your game idea, materials needed, and duration:</p>
+  <textarea id="gamePlan" placeholder="Describe your game here..."></textarea>
+  <button onclick="submitGamePlan()">Submit</button>
+  <p id="gameResult"></p>
+</div>
+
+<h2>Implementation & Observation</h2>
+<p>Run your game at home over a week and record one measure of engagement. Observe if your child enjoys the activity and retains the spelling words better.</p>
+
+<h2>Reflection & Understanding</h2>
+<div class="reflection">
+  <ul>
+    <li>Which type of game was most engaging for your child?</li>
+    <li>How did letting the child influence the theme affect their motivation?</li>
+    <li>Rotate themes and celebrate small wins to maintain novelty.</li>
+  </ul>
+</div>
+
+<h2>Assessment</h2>
+<div class="interactive">
+  <p>Which approach increases engagement the most?</p>
+  <form id="assessmentForm">
+    <input type="radio" name="answer" value="A"> A) Random word lists<br>
+    <input type="radio" name="answer" value="B"> B) Interest-based games<br>
+    <input type="radio" name="answer" value="C"> C) Silent reading only<br>
+    <input type="radio" name="answer" value="D"> D) None of the above<br><br>
+    <button type="button" onclick="checkAssessment()">Submit</button>
+  </form>
+  <p id="assessmentResult"></p>
+</div>
+
+<h2>Extended Resources</h2>
+<ul>
+  <li><a href="https://youtu.be/yYd3EZuqEP0?feature=shared" target="_blank">Gameschooling: Extra Spelling Game Ideas</a></li>
+  <li><a href="https://youtu.be/vnvndLaUH6k?feature=shared" target="_blank">How-To Idea Video</a></li>
+  <li><a href="https://youtu.be/nz92qbxafSY?feature=shared" target="_blank">Educandy Tutorial</a></li>
+</ul>
+
+<script>
+function submitInterest() {
+  const input = document.getElementById("interestInput").value.trim();
+  if(input.length > 0) {
+    document.getElementById("interestResult").innerText = "Great ideas! Now use these to design your game.";
+  } else {
+    document.getElementById("interestResult").innerText = "Please enter at least 3 ideas.";
+  }
+}
+
+function submitGamePlan() {
+  const plan = document.getElementById("gamePlan").value.trim();
+  if(plan.length > 0) {
+    document.getElementById("gameResult").innerText = "Your game plan is ready to implement!";
+  } else {
+    document.getElementById("gameResult").innerText = "Please describe your game plan.";
+  }
+}
+
+function checkAssessment() {
+  const form = document.getElementById("assessmentForm");
+  const selected = form.answer.value;
+  let result = "";
+  if(selected === "B") {
+    result = "Correct! Interest-based games increase engagement the most.";
+  } else if(selected) {
+    result = "Not quite. Try again and consider the benefits of interest-based activities.";
+  } else {
+    result = "Please select an answer.";
+  }
+  document.getElementById("assessmentResult").innerText = result;
+}
+</script>
+
+</body>
+</html>
+
 
             <div class="quiz">
               <h4>Quiz: Lesson 3</h4>
