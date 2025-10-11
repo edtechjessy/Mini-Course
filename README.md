@@ -87,9 +87,7 @@ Create a free account and choose New Form.
 #2. Update your form's action
 Replace with the form endpoint in your Formspree account.
 
-<form action="https://formspree.io/f/{form_id}" method="post">
-
-
+https://formspree.io/html/
 
 
 
