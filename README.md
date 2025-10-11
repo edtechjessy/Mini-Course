@@ -76,28 +76,13 @@ You can:
 - Or use the default HTML5 local storage version for offline journaling
 
 ### 6. Floating “Submit Assignment” Button
-This button is fixed to the lower right of the screen:
-
-```html
-<button id="submitBtn">📎 Submit Assignment</button>
-
 📎 Floating Submit Assignment Button
 Always visible on screen for easy access.
 Clicking it opens a preview and upload form (supports images or PDFs).
 
 
-When clicked, a small pop-up appears where users can:
-
-Upload an image or document
-
-Preview before submitting
-
-
-To customize the destination:
-Edit submit.js → update the form action (Replace Formspree address/custom endpoint).
-
-📄 Standalone, Copy-and-Edit Structure
-Simply copy the project folder, replace the text, videos, and images — your course is ready.
+```html
+<button id="submitBtn">📎 Submit Assignment</button>
 
 
 
