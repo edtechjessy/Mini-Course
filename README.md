@@ -23,8 +23,8 @@ Each lesson includes:
 - Seamless navigation between lessons
 
 ### 💬 Discussion Plug-in
-HTML5 using Elfsight discussion area integrated at the bottom of each lesson for learner comments or journaling.
-https://elfsight.com/comments-widget/?utm_source=websites&utm_medium=clients&utm_content=comments&utm_term=edtechjessy.github.io&utm_campaign=free-widget
+HTML5 using Elfsight discussion area integrated at the bottom of each lesson for learner comments.
+
 
 ### 📎 Floating Submit Assignment Button
 Always visible on screen for easy access.  
@@ -73,8 +73,8 @@ To customize, edit your quiz data within the JavaScript file.
 ### 5. Discussion Plug-in
 You can:
 
-- Replace it with your own discussion plug-in embed code  
-- Or use the default HTML5 local storage version for offline journaling
+- Replace it with your own discussion plug-in embed code using Elfsight (Free)
+https://elfsight.com/comments-widget/?utm_source=websites&utm_medium=clients&utm_content=comments&utm_term=edtechjessy.github.io&utm_campaign=free-widget
 
 ### 6. Floating “Submit Assignment” Button
 📎 Floating Submit Assignment Button
@@ -82,8 +82,6 @@ Always visible on screen for easy access.
 Clicking it opens a preview and upload form (supports images or PDFs).
 
 
-```html
-<button id="submitBtn">📎 Submit Assignment</button>
 
 
 
